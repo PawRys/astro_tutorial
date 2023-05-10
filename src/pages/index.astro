@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = 'Home Page';
 ---
@@ -13,16 +15,23 @@ const pageTitle = 'Home Page';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-		</nav>
-
+		<Header />
 		<main>
 			<h1>{pageTitle}</h1>
 
-			<a href="https://docs.astro.build/en/tutorial/2-pages/4/">Next thing to do</a>
+			<a class="todo" href="https://docs.astro.build/en/tutorial/3-components/3/">Next thing to do</a>
 		</main>
+
+		<Footer />
+		<script>
+			import '../scripts/menu.js';
+		</script>
 	</body>
 </html>
+
+<style>
+	.todo {
+		margin-block: 1rem;
+		font-size: 1.2rem;
+	}
+</style>
